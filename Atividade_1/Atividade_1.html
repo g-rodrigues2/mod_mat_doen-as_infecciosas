@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Modelagem-Matem%C3%A1tica-de-Doen%C3%A7as-Infecciosas-(Estudos)">Modelagem Matem&#225;tica de Doen&#231;as Infecciosas (Estudos)<a class="anchor-link" href="#Modelagem-Matem%C3%A1tica-de-Doen%C3%A7as-Infecciosas-(Estudos)">&#182;</a></h1><h2 id="Atividade-(11/03/24):-Ajuste-de-dados-de-incid%C3%AAncia-de-COVID-19-em-S%C3%A3o-Paulo-ao-modelo-SIR">Atividade (11/03/24): Ajuste de dados de incid&#234;ncia de COVID-19 em S&#227;o Paulo ao modelo SIR<a class="anchor-link" href="#Atividade-(11/03/24):-Ajuste-de-dados-de-incid%C3%AAncia-de-COVID-19-em-S%C3%A3o-Paulo-ao-modelo-SIR">&#182;</a></h2>
+<h1 id="Modelagem-Matem%C3%A1tica-de-Doen%C3%A7as-Infecciosas-(Estudos)">Modelagem Matem&#225;tica de Doen&#231;as Infecciosas (Estudos)<a class="anchor-link" href="#Modelagem-Matem%C3%A1tica-de-Doen%C3%A7as-Infecciosas-(Estudos)">&#182;</a></h1><h2 id="Atividade-(11/03/24):-Ajuste-de-dados-de-incid%C3%AAncia-de-COVID-19-em-S%C3%A3o-Paulo-ao-modelo-SIR">Atividade (11/03/24): Ajuste de dados de incid&#234;ncia de COVID-19 em S&#227;o Paulo ao modelo SIR<a class="anchor-link" href="#Atividade-(11/03/24):-Ajuste-de-dados-de-incid%C3%AAncia-de-COVID-19-em-S%C3%A3o-Paulo-ao-modelo-SIR">&#182;</a></h2><h2 id="1)-Ajuste-dos-dados-ao-modelo-SIR">1) Ajuste dos dados ao modelo SIR<a class="anchor-link" href="#1)-Ajuste-dos-dados-ao-modelo-SIR">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14599,7 +14599,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>matplotlib.pyplot: Importa a biblioteca Matplotlib com um alias plt, que é usada para criar gráficos e visualizações.</li>
 <li>plotly.io: importa a biblioteca de visualização de dados interativa e open-source em Python. Ela permite criar gráficos interativos de alta qualidade para análise de dados e comunicação visual. </li>
 </ul>
-<p><strong>Procedimntos</strong></p>
+<p><strong>Procedimentos</strong></p>
 <ol>
 <li><strong>Definição das equações diferenciais ordinárias:</strong> Em nossas análises consideramos o modelo SIR, dado por</li>
 </ol>
@@ -14704,6 +14704,8 @@ $$\left\{\begin{array}{llll}
 <span class="c1"># method='L-BFGS-B': O método de otimização a ser usado. Neste caso, o método de otimização limitada de BFGS (L-BFGS-B) é escolhido. Este é um método de otimização sem derivadas, adequado para problemas de otimização não suaves.</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">cost_function</span><span class="p">,</span> <span class="n">initial_guess</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Days'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">]),</span> <span class="n">method</span><span class="o">=</span><span class="s1">'L-BFGS-B'</span><span class="p">)</span>
 
+<span class="c1"># blablabla</span>
+
 <span class="c1"># Extrair os parâmetros ajustados</span>
 <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
 
@@ -14744,8 +14746,8 @@ $$\left\{\begin{array}{llll}
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Gamma:"</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
 
 <span class="c1"># Calcular o Número Reprodutivo Básico (R0)</span>
-<span class="n">R0</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">/</span> <span class="n">gamma</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Número Reprodutivo Básico (R0):"</span><span class="p">,</span> <span class="n">R0</span><span class="p">)</span>
+<span class="n">R0_SIR</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">/</span> <span class="n">gamma</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Número Reprodutivo Básico (R0):"</span><span class="p">,</span> <span class="n">R0_SIR</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14809,7 +14811,7 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Precisamos conferir se o ajuste do modelo SIR aos dados é adequado e, para isso, fizemos uso do Índice de Correlação Intraclasse (ICC) para medir a consistência do ajuste.</p>
-<h3 id="%C3%8Dndice-de-correla%C3%A7%C3%A3o-Intraclasse">&#205;ndice de correla&#231;&#227;o Intraclasse<a class="anchor-link" href="#%C3%8Dndice-de-correla%C3%A7%C3%A3o-Intraclasse">&#182;</a></h3><p>O Índice de Correlação Intraclasse (ICC) é uma medida estatística que avalia a consistência ou concordância entre as medidas repetidas em uma mesma amostra. A categorização dos valores de ICC baseia-se nas diretrizes apresentadas por Cicchetti (1994) e são dadas da seguinte forma: "Inaceitável" designa valores de ICC abaixo de 0,7; "Fraco" corresponde a valores de ICC que variam de 0,7 a 0,79; "Bom" abrange valores de ICC entre 0,8 e 0,89; e "Excelente" denota valores de ICC que se enquadram no intervalo de 0,90 a 1. No contexto do ajuste de dados ao modelo SIR, podemos calcular o ICC para avaliar a qualidade do ajuste comparando os casos reais com os casos simulados pelo modelo. Para calcular o ICC, primeiro precisamos calcular a soma total dos quadrados (SST), que é a variação total dos dados. Em seguida, calculamos a soma dos quadrados dos resíduos (SSE), que é a variação não explicada pelo modelo. O ICC é então dado pela razão entre a diferença entre SST e SSE e SST.</p>
+<h3 id="1.1)-%C3%8Dndice-de-correla%C3%A7%C3%A3o-Intraclasse">1.1) &#205;ndice de correla&#231;&#227;o Intraclasse<a class="anchor-link" href="#1.1)-%C3%8Dndice-de-correla%C3%A7%C3%A3o-Intraclasse">&#182;</a></h3><p>O Índice de Correlação Intraclasse (ICC) é uma medida estatística que avalia a consistência ou concordância entre as medidas repetidas em uma mesma amostra. A categorização dos valores de ICC baseia-se nas diretrizes apresentadas por Cicchetti (1994) e são dadas da seguinte forma: "Inaceitável" designa valores de ICC abaixo de 0,7; "Fraco" corresponde a valores de ICC que variam de 0,7 a 0,79; "Bom" abrange valores de ICC entre 0,8 e 0,89; e "Excelente" denota valores de ICC que se enquadram no intervalo de 0,90 a 1. No contexto do ajuste de dados ao modelo SIR, podemos calcular o ICC para avaliar a qualidade do ajuste comparando os casos reais com os casos simulados pelo modelo. Para calcular o ICC, primeiro precisamos calcular a soma total dos quadrados (SST), que é a variação total dos dados. Em seguida, calculamos a soma dos quadrados dos resíduos (SSE), que é a variação não explicada pelo modelo. O ICC é então dado pela razão entre a diferença entre SST e SSE e SST.</p>
 <p>O algoritmo para o cálculo do ICC é dado a seguir:</p>
 
 </div>
@@ -14870,8 +14872,32 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Os resultados obtidos mostram que, para o conjunto de dados disponibilizados, a taxa de infecção, $\beta$, foi estimada em aproximadamente 0,776 e, a taxa de recuperação, $\gamma$ foi estimada em aproximadamente 0,056. Além disso, foi possível fazer uma estimativa do Número Reprodutivo Básico,  $\mathcal{R}_0$, com um valor de aproximadamente 1,36. De acordo com o ICC obtido, de aproximadamente 0,37, o ajuste do modelo SIR aos dados não é adequado e considerado inadequado.</p>
-<p><strong>Discussão em sala de aula:</strong> Os resultados indicam uma certa disparidade com o que foi relatado no período da pandemia, no que diz respeito ao número reprodutivo básico, bem como o período infeccioso, calculado em  aproximadamente 17 dias. Isso é explicado pelo fato de que, para o ajuste do modelo, utilizei todo o conjunto de dados, sendo que, seria necessário a utilização de apenas uma parte, a saber, o período  de crescimento da doença, que se aproxima de uma reta, havendo a possibilidade de extrair informações mais precisas. Podemos notar que o ajuste se aproxima de uma reta até o início de maio, logo, podemos calcular a inclinação desta reta para determinar o $\mathcal{R}_0$ mais aproximado.</p>
+<p>Os resultados obtidos mostram que, para o conjunto de dados disponibilizados, a taxa de infecção, $\beta$, foi estimada em aproximadamente 0,776 e, a taxa de recuperação, $\gamma$ foi estimada em aproximadamente 0,056. Além disso, foi possível fazer uma estimativa do Número Reprodutivo Básico,  $\mathcal{R}_0$, associado ao ajuste do modelo SIR, onde econtramos o valor de aproximadamente 1,36.</p>
+<p>Conforme com o ICC obtido, o ajuste do modelo SIR aos dados é considerado inaceitável, o que justifica o $\mathcal{R}_0$ estar fora da realidade.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Discussão em sala de aula:</strong> Os resultados indicam uma certa disparidade com o que foi relatado no período da pandemia, no que diz respeito ao número reprodutivo básico, bem como o período infeccioso, calculado em  aproximadamente 17 dias. Isso é explicado pelo fato de que, para o ajuste do modelo, utilizei todo o conjunto de dados, sendo que, seria necessário a utilização de apenas uma parte, a saber, o período  de crescimento da doença, que se aproxima de uma reta, havendo a possibilidade de extrair informações mais precisas. Podemos notar que o ajuste se aproxima de uma reta até o início de maio, logo, podemos calcular a inclinação desta reta para determinar o $\mathcal{R}_0$ mais aproximado. Uma das maneiras de se estimar o $\mathcal{R}_0$ seria utilizando o gráfico de casos acumulados, em que o coeficiente angular da reta de crescimento associado a este gráfico fornece o $\mathcal{R}_0$.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="2)-N%C3%BAmero-Reprodutivo-B%C3%A1sico-calculado-a-partir-do-gr%C3%A1fico-de-casos-acumulados">2) N&#250;mero Reprodutivo B&#225;sico calculado a partir do gr&#225;fico de casos acumulados<a class="anchor-link" href="#2)-N%C3%BAmero-Reprodutivo-B%C3%A1sico-calculado-a-partir-do-gr%C3%A1fico-de-casos-acumulados">&#182;</a></h3><p>Nesta seção visamos obter o número reprodutivo básico associado aos dado de casos de COVID-19 utilizando o coeficiente angular da reta ajustada a região de crescimento dos casos (dados ajustados ao modelo SIR mostrados acima), bem como utilizando a reta de ajuste aos casos acumulados.</p>
 
 </div>
 </div>
@@ -14884,16 +14910,96 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filtrar os dados até aproximadamente o mês de maio (considerando até o dia 31 de maio)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Calcular os casos acumulados</span>
+<span class="n">cumulative_cases</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="c1"># Criar o gráfico</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Adicionar os dados de dispersão</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">cumulative_cases</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'markers'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Casos'</span><span class="p">))</span>
+
+<span class="c1"># Adicionar título e rótulos dos eixos</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Casos Acumulados de COVID-19 em São Paulo, mar. à set. de 2020'</span><span class="p">,</span>
+                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">'Casos acumulados'</span><span class="p">,</span>
+                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">'Casos'</span><span class="p">,</span>
+                  <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_white'</span><span class="p">)</span>
+
+<span class="c1"># Salvar o gráfico em HTML</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">'casos_acumulados.html'</span><span class="p">)</span>
+
+<span class="c1"># Exibir o gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<iframe src="https://g-rodrigues2.github.io/mod_mat_doencas_infecciosas/Atividade_1/casos_acumulados.html" width="1000" height="600"></iframe>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filtrar os dados até maio que representa o pico da infecção</span>
 <span class="n">data_until_may</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">'2020-05-31'</span><span class="p">]</span>
 
-<span class="c1"># Ajustar uma reta aos dados reais usando o método dos mínimos quadrados</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">data_until_may</span><span class="p">[</span><span class="s1">'Days'</span><span class="p">]</span>  <span class="c1"># Dados de tempo (dias)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data_until_may</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">]</span>  <span class="c1"># Dados de casos confirmados (reais)</span>
-<span class="n">slope</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Ajustar uma reta de primeira ordem (y = mx + c) aos dados usando o método dos mínimos quadrados e extrair a inclinação (coeficiente angular) da reta</span>
+<span class="c1"># Ajustar uma reta aos dados reais de casos diários usando o método dos mínimos quadrados</span>
+<span class="n">x_daily</span> <span class="o">=</span> <span class="n">data_until_may</span><span class="p">[</span><span class="s1">'Days'</span><span class="p">]</span>  <span class="c1"># Dados de tempo (dias)</span>
+<span class="n">y_daily</span> <span class="o">=</span> <span class="n">data_until_may</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">]</span>  <span class="c1"># Dados de casos confirmados diários</span>
+<span class="c1"># Calcular o coeficiente angular da reta para os casos diários</span>
+<span class="n">coef_angular_daily</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x_daily</span><span class="p">,</span> <span class="n">y_daily</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c1"># Exibir a inclinação da reta crescente</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Inclinação da reta crescente até maio:"</span><span class="p">,</span> <span class="n">slope</span><span class="p">)</span>
+<span class="c1"># Ajustar uma reta aos dados reais de casos acumulados usando o método dos mínimos quadrados</span>
+<span class="n">cumulative_cases</span> <span class="o">=</span> <span class="n">data_until_may</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>  <span class="c1"># Calcular casos acumulados</span>
+<span class="n">x_cumulative</span> <span class="o">=</span> <span class="n">x_daily</span>  <span class="c1"># Usar os mesmos dados de tempo (dias)</span>
+<span class="n">y_cumulative</span> <span class="o">=</span> <span class="n">cumulative_cases</span>  <span class="c1"># Dados de casos confirmados acumulados</span>
+
+<span class="c1"># Calcular o coeficiente angular da reta para os casos acumulados</span>
+<span class="n">coef_angular_cumulative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x_cumulative</span><span class="p">,</span> <span class="n">y_cumulative</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">R0_cumulative</span> <span class="o">=</span> <span class="n">coef_angular_cumulative</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">cumulative_cases</span><span class="p">)</span>
+
+<span class="c1"># Exibir os coeficientes angulares</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Coeficiente Angular da Reta para Casos Diários:"</span><span class="p">,</span> <span class="n">coef_angular_daily</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Coeficiente Angular da Reta para Casos Acumulados:"</span><span class="p">,</span> <span class="n">R0_cumulative</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14915,7 +15021,8 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Inclinação da reta crescente até maio: 3.163886746165228
+<pre>Coeficiente Angular da Reta para Casos Diários: 3.163886746165228
+Coeficiente Angular da Reta para Casos Acumulados: 7.541762846047168
 </pre>
 </div>
 </div>
@@ -14931,7 +15038,9 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>O coeficiente angular da reta ajustada aos dados, que representa $\beta$, foi de aproximadamente 3,16 e, calculando o $\mathcal{R}_0$ a partir deste resultado temos um valor aproximado de 56,42, dado que o $\gamma$ estimado foi de 0,056.</p>
+<p>Os resultados mostram que, ao utilizarmos os dados no tempo de casos de Covid, quando ajustamos a reta a curva de crescimento até aproximadamente o mês de maio, o coeficiente angular da reta ajustada é de aproximadamente 3,16, e este seria o $\mathcal{R}_0$. No entanto, este valor não condiz com o valor calculado na época da epidemia, o qual teria ficado entre 6 e 8.</p>
+<p>Ao utilizarmos os casos acumulados, o ajuste nos permitiu obter um coeficiente angular de aproximadamente 7,5, número mais aproximado ao que foi obtido no início da pandemia.</p>
+<p><strong>Observação:</strong> quando se trata dos casos acumulados, o coeficiente angular da reta é influenciado pelo número de observações. Portanto, para normalizar esse valor e torná-lo comparável com o coeficiente angular da reta para os casos diários, devemos dividir o coeficiente angular da reta para os casos acumulados pelo número de observações (tamanho do conjunto de dados). Isso garante uma comparação mais justa entre os dois coeficientes angulares. Isso torna os dois coeficientes angulares comparáveis em termos de suas magnitudes e interpretações.</p>
 
 </div>
 </div>
@@ -14943,14 +15052,16 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="N%C3%BAmero-Reprodutivo-Efetivo-$%5Cmathcal%7BR%7D_t$">N&#250;mero Reprodutivo Efetivo $\mathcal{R}_t$<a class="anchor-link" href="#N%C3%BAmero-Reprodutivo-Efetivo-$%5Cmathcal%7BR%7D_t$">&#182;</a></h3><p><strong>Definição:</strong> É uma medida que representa o número médio de casos secundários gerados por um único caso em um determinado momento no tempo $t$, levando em consideração a dinâmica da epidemia. Definido para qualquer tempo $t$, após a invasão a fração de suscetíveis na população é menor do que 1, de maneira  que nem todos os contatos resultam em um novo caso.</p>
+<h3 id="3)-N%C3%BAmero-Reprodutivo-Efetivo-$%5Cmathcal%7BR%7D_t$">3) N&#250;mero Reprodutivo Efetivo $\mathcal{R}_t$<a class="anchor-link" href="#3)-N%C3%BAmero-Reprodutivo-Efetivo-$%5Cmathcal%7BR%7D_t$">&#182;</a></h3><p><strong>Definição:</strong> É uma medida que representa o número médio de casos secundários gerados por um único caso em um determinado momento no tempo $t$, levando em consideração a dinâmica da epidemia. Definido para qualquer tempo $t$, após a invasão a fração de suscetíveis na população é menor do que 1, de maneira  que nem todos os contatos resultam em um novo caso.</p>
 <p>Nestas análises foram calculados três possibilidades para o $\mathcal{R}_t$:</p>
 <ul>
 <li><p>$\mathcal{R}_t$ considerando o $\mathcal{R}_0$ estimado pelo modelo SIR, fazendo $\mathcal{R}_t=\mathcal{R_0}\times S(t)/N$, em que $S(t)$ é a solução numérica do modelo ajustado aos dados;</p>
 </li>
 <li><p>$\mathcal{R}_t$ considerando o coeficiente angular da reta ajustada ao início do período de infecção, que representa o parâmetro $\beta$ no modelo, fazendo $\mathcal{R}_t=\mathcal{R_0}\times S(t)/N$;</p>
 </li>
-<li><p>$\mathcal{R}_t$ considerando a equação $\mathcal{R}_t = \dfrac{b(t)}{\int_0^\infty b(t-a)g(a)da}$, em que $b(t)$ representa o conjunto de dados, $b(t-a)$ o delay, e $g(a)=ae^{-at}$.</p>
+<li><p>$\mathcal{R}_t$ considerando o coeficiente angular da reta ajustada aos casos acumulados, que representa o parâmetro $\beta$ no modelo, fazendo $\mathcal{R}_t=\mathcal{R_0}\times S(t)/N$;</p>
+</li>
+<li><p>$\mathcal{R}_t$ considerando a equação $\mathcal{R}_t = \dfrac{b(t)}{\int_0^\infty b(t-a)g(a)da}$, em que $b(t)$ representa o conjunto de dados, $b(t-a)$ o delay, e $g(a)=ae^{-a}$.</p>
 </li>
 </ul>
 <p>Os resultados são mostrados a seguir:</p>
@@ -14958,7 +15069,7 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -14970,57 +15081,27 @@ Número Reprodutivo Básico (R0): 1.3632977484816313
 <span class="n">S_t</span> <span class="o">=</span> <span class="n">solution</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Número de indivíduos suscetíveis no tempo t</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># População total</span>
 
-<span class="c1"># Ajustado pelo coeficiente angula da reta no início da infecção</span>
-<span class="n">R0_angular</span> <span class="o">=</span> <span class="n">slope</span><span class="o">/</span><span class="n">gamma</span> 
-<span class="n">Rt_angular</span> <span class="o">=</span> <span class="n">R0_angular</span> <span class="o">*</span> <span class="p">(</span><span class="n">S_t</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
-
 <span class="c1"># Ajustado pelo SIR</span>
-<span class="n">Rt</span><span class="o">=</span><span class="n">R0</span> <span class="o">*</span> <span class="p">(</span><span class="n">S_t</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">Rt</span><span class="o">=</span><span class="n">R0_SIR</span> <span class="o">*</span> <span class="p">(</span><span class="n">S_t</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Ajustado pelo coeficiente angular da reta no início da infecção</span>
+<span class="n">Rt_angular</span> <span class="o">=</span> <span class="n">coef_angular_daily</span> <span class="o">*</span> <span class="p">(</span><span class="n">S_t</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Ajustado pelo coeficiente angular da reta nos casos acumulados</span>
+<span class="n">Rt_cumulative</span> <span class="o">=</span> <span class="n">R0_cumulative</span> <span class="o">*</span> <span class="p">(</span><span class="n">S_t</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
 
 <span class="c1"># Ajustado utilizando a integral</span>
 <span class="n">Rt_real</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">aux</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Days'</span><span class="p">]:</span>    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Days'</span><span class="p">][</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">aux</span> <span class="o">=</span> <span class="mi">0</span>    
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Days'</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">aux</span> <span class="o">=</span> <span class="n">aux</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">j</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
-        <span class="c1"># print(aux)</span>
+        <span class="n">aux</span> <span class="o">=</span> <span class="n">aux</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">j</span><span class="p">)</span>
     <span class="n">Rt_real</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">aux</span><span class="p">)</span> 
-<span class="n">Rt_real</span> <span class="o">=</span> <span class="n">Rt_real</span>  <span class="o">*</span> <span class="p">(</span><span class="n">S_t</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> 
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>C:\Users\guilh\AppData\Local\Temp\ipykernel_11432\520335057.py:19: RuntimeWarning:
-
-divide by zero encountered in longlong_scalars
-
-C:\Users\guilh\AppData\Local\Temp\ipykernel_11432\520335057.py:19: RuntimeWarning:
-
-divide by zero encountered in true_divide
-
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15031,17 +15112,13 @@ divide by zero encountered in true_divide
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Criar o gráfico interativo de Rt</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
 
-<span class="c1"># Adicionar a linha de Rt</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt)'</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Rt ajustado pelo modelo SIR'</span><span class="p">))</span>
 
-<span class="c1"># Adicionar a linha do limiar Rt=1</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
               <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">'dash'</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Limiar (Rt=1)'</span><span class="p">)</span>
 
-<span class="c1"># Atualizar o layout do gráfico</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Rt ajustado pelo modelo SIR'</span><span class="p">,</span>
                   <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">'Data'</span><span class="p">,</span>
                   <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt)'</span><span class="p">,</span>
@@ -15050,10 +15127,8 @@ divide by zero encountered in true_divide
                   <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">),</span>
                   <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_white'</span><span class="p">)</span>
 
-<span class="c1"># Salvar o gráfico em um arquivo HTML</span>
 <span class="n">pio</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">'Rt_SIR.html'</span><span class="p">)</span>
 
-<span class="c1"># Exibir o gráfico interativo</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -15092,70 +15167,6 @@ divide by zero encountered in true_divide
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <iframe src="https://g-rodrigues2.github.io/mod_mat_doencas_infecciosas/Atividade_1/Rt_SIR.html" width="1000" height="600"></iframe>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
-<span class="c1"># Eliminamos os dois primeiros dias devido a divisão por zero associada a integração</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">][</span><span class="mi">2</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt_real</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'markers'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt) a partir dos dados reais'</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-              <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">'dash'</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Limiar (Rt=1)'</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Rt ajustado pela integração com os dados reais'</span><span class="p">,</span>
-                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">'Data'</span><span class="p">,</span>
-                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt)'</span><span class="p">,</span>
-                  <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">),</span>
-                  <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                  <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">),</span>
-                  <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_white'</span><span class="p">)</span>
-
-<span class="n">pio</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">'Rt_int_dados.html'</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<iframe src="https://g-rodrigues2.github.io/mod_mat_doencas_infecciosas/Atividade_1/Rt_int_dados.html" width="1000" height="600"></iframe>
 </div>
 </div>
 </div>
@@ -15225,6 +15236,61 @@ divide by zero encountered in true_divide
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt_cumulative</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Rt ajustado pelo coef. angular'</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+              <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">'dash'</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Limiar (Rt=1)'</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Rt ajustado pelo coeficiente angular da reta nos casos acumulados'</span><span class="p">,</span>
+                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">'Data'</span><span class="p">,</span>
+                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt)'</span><span class="p">,</span>
+                  <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">),</span>
+                  <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">),</span>
+                  <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_white'</span><span class="p">)</span>
+
+<span class="n">pio</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">'Rt_coef_ang_cumulative.html'</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15232,11 +15298,102 @@ divide by zero encountered in true_divide
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Testando-o-modelo-SIS-e-SIRS-aos-dados">Testando o modelo SIS e SIRS aos dados<a class="anchor-link" href="#Testando-o-modelo-SIS-e-SIRS-aos-dados">&#182;</a></h3><p>Como vimos, o modelo SIR não obteve um bom ajuste aos dados, logo, nesta seção verificaremos o ajuste a outros modelos epidemiológicos, a saber, SIS e SIRS.</p>
-<ul>
-<li>SIS: No modelo SIS, os indivíduos se recuperam da infecção e retornam à suscetibilidade, não havendo uma fase de recuperação permanente.</li>
-<li>No modelo SIRS, os indivíduos se recuperam da infecção, mas eventualmente perdem a imunidade e se tornam suscetíveis novamente. </li>
-</ul>
+<iframe src="https://g-rodrigues2.github.io/mod_mat_doencas_infecciosas/Atividade_1/Rt_coef_ang_cumulative.html" width="1000" height="600"></iframe>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Criar o gráfico interativo de Rt</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Adicionar a linha de Rt</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt_real</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt)'</span><span class="p">))</span>
+
+<span class="c1"># Adicionar a linha do limiar Rt=1</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+              <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">'dash'</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Limiar (Rt=1)'</span><span class="p">)</span>
+
+<span class="c1"># Atualizar o layout do gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Rt determinado pela integração'</span><span class="p">,</span>
+                  <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">'Data'</span><span class="p">,</span>
+                  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt)'</span><span class="p">,</span>
+                  <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">),</span>
+                  <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.95</span><span class="p">),</span>
+                  <span class="n">template</span><span class="o">=</span><span class="s1">'plotly_white'</span><span class="p">)</span>
+
+<span class="c1"># Salvar o gráfico em um arquivo HTML</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">'Rt_real.html'</span><span class="p">)</span>
+
+<span class="c1"># Exibir o gráfico interativo</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<iframe src="https://g-rodrigues2.github.io/mod_mat_doencas_infecciosas/Atividade_1/Rt_real.html" width="1000" height="600"></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Os resultados obtidos para os $\mathcal{R}_t$ mostram que só foi possível obter o índice real a partir da equação envolvendo a integração sob os casos acumulados, como mostrado na figura acima. Os outros resultados obtidos, relacionados aos números efetivos considerando os $\mathcal{R}_0$ obtidos a partir dos coeficientes angulares, não condizem com a realidade pois em ambos os casos é necessário a utilização da população sucetível, a qual em nosso caso foi obtida por meio do ajuste do modelo SIR, que não se apresentou como um bom modelo de ajuste.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="4)-Testando-o-ajuste-de-outros-modelos-epidemiol%C3%B3gicos-aos-dados">4) Testando o ajuste de outros modelos epidemiol&#243;gicos aos dados<a class="anchor-link" href="#4)-Testando-o-ajuste-de-outros-modelos-epidemiol%C3%B3gicos-aos-dados">&#182;</a></h3><p>Como vimos, o modelo SIR não obteve um bom ajuste aos dados, logo, nesta seção verificaremos o ajuste a outros modelos epidemiológicos, a saber, SIS, SIRS, SEIR, SEIRS, SIRD e SEIRD.</p>
 
 </div>
 </div>
@@ -15783,7 +15940,8 @@ ICC para o modelo SEIRD: -14.539482741919871
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Com os resultados obtidos, podemos concluir que, dentre os modelos escolhidos, o que melhor se ajusta aos dados é o SIRS, com  um ICC de aproximadamente 0,61. Para os critérios, este índice ainda é inaceitável, mas melhor do que o obtido no modelo SIR. Deste modo, vamos utilizá-lo para calcular o $\mathcal{R}_t$.</p>
+<p>Com os resultados obtidos, podemos concluir que, dentre os modelos escolhidos, o que melhor se ajusta aos dados é o SIRS, com  um ICC de aproximadamente 0,61. Para os critérios, este índice ainda é inaceitável, mas melhor do que o obtido no modelo SIR. Isso mostra que modelos mais complexos devem ser utilizados para estudar epidemias como a de Covid-19.</p>
+<p>Para comparação, a figura a seguir mostra o $\mathcal{R}_t$ ajustado ao modelo SIRS comparado com o calculado a partir da integração.</p>
 
 </div>
 </div>
@@ -15807,8 +15965,9 @@ ICC para o modelo SEIRD: -14.539482741919871
 <span class="c1"># Eliminamos os dois primeiros dias devido a divisão por zero associada a integração</span>
 
 <span class="c1"># fig.add_trace(go.Scatter(x=data['Date'][2:len(data['Date'])-1], y=Rt_real[2:len(data['Date'])-1], mode='markers', name='Número Reprodutivo Efetivo (Rt) a partir dos dados reais'))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt_SIRS</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo (Rt)'</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt_SIRS</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo com SIRS (Rt)'</span><span class="p">))</span>
 
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">Rt_real</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'lines'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Número Reprodutivo Efetivo pela integração (Rt)'</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">)))</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">add_shape</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
               <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dash</span><span class="o">=</span><span class="s1">'dash'</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Limiar (Rt=1)'</span><span class="p">)</span>
@@ -15870,7 +16029,7 @@ ICC para o modelo SEIRD: -14.539482741919871
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Dados-utilizados:-COVID-19-em-S%C3%A3o-Paulo-em-2023">Dados utilizados: COVID-19 em S&#227;o Paulo em 2023<a class="anchor-link" href="#Dados-utilizados:-COVID-19-em-S%C3%A3o-Paulo-em-2023">&#182;</a></h3>
+<h3 id="Dados-utilizados:-COVID-19-em-S%C3%A3o-Paulo-de-mar%C3%A7o-a-setembro-de-2020">Dados utilizados: COVID-19 em S&#227;o Paulo de mar&#231;o a setembro de 2020<a class="anchor-link" href="#Dados-utilizados:-COVID-19-em-S%C3%A3o-Paulo-de-mar%C3%A7o-a-setembro-de-2020">&#182;</a></h3>
 </div>
 </div>
 </div>

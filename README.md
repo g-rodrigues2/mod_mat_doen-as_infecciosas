@@ -6,4 +6,6 @@ Páginas de estudos e atividades da disciplina oferecida pelo Programa de Pós-G
 * Ajuste de modelos epidemiológicos aos dados
 * Cálculo do $\mathcal{R}_0$ e $\mathcal{R}_t$
 
-[Atividade_2](https://g-rodrigues2.github.io/mod_mat_doencas_infecciosas/Atividade_2/Atividade_2.html): Matrizes de transmissão a autovalores dominantes
+[Atividade_2](https://g-rodrigues2.github.io/mod_mat_doencas_infecciosas/Atividade_2/Atividade_2.html): Modelagem envolvendo doenças sexualmente transmissíveis
+* Matrizes de transmissão a autovalores dominantes
+* Número reprodutivo básico
